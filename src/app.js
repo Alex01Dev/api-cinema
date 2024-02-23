@@ -17,7 +17,6 @@ app.use(express.json());//leer json
 app.use(express.urlencoded({extended: false}));//para recibir datos del formulario
 app.use(morgan('dev'));
 app.use('/', ticketsRouter);
-// app.use('/movies', moviesRouter);
 
 
 export default app;

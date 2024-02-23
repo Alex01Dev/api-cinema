@@ -133,7 +133,6 @@
             <p class="welcome">Bienvenido al Cine AmauriPolis. Explora nuestras opciones:</p>
             
     
-            <!-- Div Informativo 1 -->
             <div class="info-div" id="infoDiv1">
                 <h3>Promociones en Productos!!</h3>
                 <p>Por esta Semana tenemos una promocion en las Bebidas ICE mas un combo de palomitas</p>
@@ -141,7 +140,6 @@
             </div>
             <a href="#" class="ui-btn ui-btn-b ui-corner-all" onclick="openInfoDiv('infoDiv1')">Ofertas de la Semana</a>
 
-            <!-- Div Informativo 2 -->
             <div class="info-div" id="infoDiv2">
                 <h3>Cartelera del Mes</h3>
                 <p>Este mes tendremos grandes Peliculas que se estrenan este año</p>
@@ -150,7 +148,6 @@
             </div>
             <a href="#" class="ui-btn ui-btn-b ui-corner-all" onclick="openInfoDiv('infoDiv2')">Explora La Cartelera</a>
 
-            <!-- Div Informativo 3 -->
             <div class="info-div" id="infoDiv3">
                 <h3>Compra tu Boleto!!</h3>
                 <p>Compra tu boleto para nuestras Peliculas</p>
@@ -169,12 +166,10 @@
         </div>
     
         <script>
-            // Función para abrir un div informativo
             function openInfoDiv(divId) {
                 $("#" + divId).fadeIn();
             }
     
-            // Función para cerrar un div informativo
             function closeInfoDiv(divId) {
                 $("#" + divId).fadeOut();
             }
@@ -236,14 +231,13 @@
                                 <li><a href="/delete/<%= ticket.barcode %>" class="ui-btn">Eliminar</a></li>
                             </ul>
                         </div>
-            </div>                
-           <%}) %>
+                    <% }) %>
+                    </div>
         <div data-role="footer">
             <h5>Developend by Alex Amauri Márquez Canales</h5>
         </div>
 </div>
 </div>
-
 
 
 
