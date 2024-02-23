@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+         h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        .title {
+            padding: 2px;
+            background-color: rgba(3, 45, 53, 0.781);
+
+        }
+    </style>
+    <title>Cine AmauriPolis</title>
+</head>
+<body>
+    <h1>Cine AmauriPolis</h1>
+      <div data-role="page">
+            <div data-role="header">
+                <div data-role="navbar">
+                     <div class="title">
+                <h1>Cine AmauriPolis</h1>
+            </div>
+                    <ul>
+                        <li><a href="#page1" data-icon="home">Inicio</a></li>
+                        <li><a href="#page2" data-icon="tag" class="ui-btn-active">Boletos</a></li>
+                        <li><a href="#page3" data-icon="eye">Peliculas</a></li>
+                    </ul>
+                    </div>
+            </div>
+            <div data-role="content">
+                <form action="/<%= ticket.barcode %>" method="POST">
+                    <label for="txt_codigo_barras">Codigo de barras:</label>
+                    <input type="text" name="barcode" id="txt_codigo_barras" placeholder="Codigo de barras" value="<%= ticket.barcode %>">
+
+                    <label for="txt_descripcion">Nombre de la Pelicula:</label>
+                    <input type="text" name="name_movie" id="txt_name_movie" placeholder="Nombre Pelicula" value="<%= ticket.name_movie%>">
+
+                    <label for="txt_expireDate">Fecha de la Funcion:</label>
+                    <input type="date" name="date" id="txt_date" placeholder="Fecha de Funcion" value="<%= ticket.date %>">
+
+                    <label for="txt_price">Precio del Boleto:</label>
+                    <input type="text" name="price" id="txt_price" placeholder="Precio" value="<%= ticket.price %>">
+
+                    <label for="txt_cost">Numero de Asiento:</label>
+                    <input type="text" name="seat" id="txt_seat" placeholder="Asiento" value="<%= ticket.seat %>">
+
+                    <select name="status" id="flip-6" data-role="slider" data-mini="true">
+                        <option value="0" <%= ticket.status=0?"select": "" %> >Off</option>
+                        <option value="1" <%= ticket.status=1?"select": "" %> >On</option>
+                    </select>
+
+                    <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>   
+                </form>
+            </div>
+            <div data-role="footer">
+                <h5>Developend by Alex Amauri Marquez Canales</h5>
+            </div>
+      </div>
+</body>
+</html>
