@@ -17,22 +17,27 @@
             text-align: center;
             color: #ffffff;
         }
+
         .title {
             padding: 2px;
             background-color: rgba(3, 45, 53, 0.781);
 
         }
-        .content-imgage{
+
+        .content-imgage {
             text-align: center;
         }
-        img{
+
+        img {
             display: inline-block;
             width: 50%;
             height: 200px;
         }
-        .content{
+
+        .content {
             background-color: #0f3b36;
         }
+
         .info-div {
             padding: 20px;
             text-align: center;
@@ -49,12 +54,14 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        .welcome{
+
+        .welcome {
             text-align: center;
             color: #ffffff;
             font-size: 1.5em;
@@ -64,9 +71,11 @@
             margin: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        .viewMovies{
+
+        .viewMovies {
             text-decoration: none;
         }
+
         .wheel-container {
             position: relative;
             width: 100%;
@@ -98,15 +107,170 @@
         }
 
         @keyframes rollAndSpin {
-            0%, 25% { left: -50%; transform: rotate(0deg); }
-            50%, 75% { left: 150%; transform: rotate(180deg); }
-            100% { left: -50%; transform: rotate(360deg); }
+
+            0%,
+            25% {
+                left: -50%;
+                transform: rotate(0deg);
+            }
+
+            50%,
+            75% {
+                left: 150%;
+                transform: rotate(180deg);
+            }
+
+            100% {
+                left: -50%;
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes spikeAnimation {
-            0%, 100% { height: 20px; }
-            50% { height: 40px; }
+
+            0%,
+            100% {
+                height: 20px;
+            }
+
+            50% {
+                height: 40px;
+            }
         }
+        /* A bit custom styling */
+.my-page .ui-listview li .ui-button p {
+    color: #c0c0c0;
+}
+.my-page .ui-listview li .ui-button .ui-listview-item-aside {
+    color: #eee;
+}
+/* First breakpoint is 48em (768px). 3 column layout. Tiles 250x250 pixels incl. margin at the breakpoint. */
+@media ( min-width: 48em ) {
+    .my-page .ui-content {
+        padding: .5625em; /* 9px */
+    }
+    .my-page .ui-listview li {
+        float: left;
+        width: 30.9333%; /* 33.3333% incl. 2 x 1.2% margin */
+        height: 14.5em; /* 232p */
+        margin: .5625em 1.2%;
+    }
+    .my-page .ui-listview li > .ui-button {
+        -webkit-box-sizing: border-box; /* include padding and border in height so we can set it to 100% */
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 100%;
+    }
+    .my-page .ui-listview li.ui-listview-item-has-thumbnail .ui-listview-item-thumbnail {
+        height: auto; /* To keep aspect ratio. */
+        max-width: 100%;
+        max-height: none;
+    }
+    /* Make all list items and anchors inherit the border-radius from the UL. */
+    .my-page .ui-listview li,
+    .my-page .ui-listview li .ui-button,
+    .my-page .ui-listview .ui-listview-item-thumbnail {
+        -webkit-border-radius: inherit;
+        border-radius: inherit;
+    }
+    /* Hide the icon */
+    .my-page .ui-listview .ui-icon-end:after {
+        display: none;
+    }
+    /* Make text wrap. */
+    .my-page .ui-listview h2,
+    .my-page .ui-listview p {
+        white-space: normal;
+        overflow: visible;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    /* Text position */
+    .my-page .ui-listview h2 {
+        font-size: 1.25em;
+        margin: 0;
+        padding: .125em 1em;
+        bottom: 50%;
+    }
+    .my-page .ui-listview p {
+        font-size: 1em;
+        margin: 0;
+        padding: 0 1.25em;
+        min-height: 50%;
+        bottom: 0;
+    }
+    /* Semi transparent background and different position if there is a thumb. The button has overflow hidden so we don't need to set border-radius. */
+    .ui-listview .ui-listview-item-has-thumbnail h2,
+    .ui-listview .ui-listview-item-has-thumbnail p {
+        background: #111;
+        background: rgba(0,0,0,.8);
+    }
+    .ui-listview .ui-listview-item-has-thumbnail h2 {
+        bottom: 35%;
+    }
+    .ui-listview .ui-listview-item-has-thumbnail p {
+        min-height: 35%;
+    }
+    .my-page .ui-listview .ui-listview-item-aside {
+        padding: .125em .625em;
+        width: auto;
+        min-height: 0;
+        top: 0;
+        left: auto;
+        bottom: auto;
+        /* Custom styling. */
+        background: #990099;
+        background: rgba(153,0,153,.85);
+        -webkit-border-top-right-radius: inherit;
+        border-top-right-radius: inherit;
+        -webkit-border-bottom-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+        -webkit-border-bottom-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    /* If you want to add shadow, don't kill the focus style. */
+    .my-page .ui-listview li {
+        -moz-box-shadow: 0px 0px 9px #111;
+        -webkit-box-shadow: 0px 0px 9px #111;
+        box-shadow: 0px 0px 9px #111;
+    }
+    /* Images mask the hover bg color so we give desktop users feedback by applying the focus style on hover as well. */
+    .my-page .ui-listview li > .ui-button:hover {
+        -moz-box-shadow: 0px 0px 12px #33ccff;
+        -webkit-box-shadow: 0px 0px 12px #33ccff;
+        box-shadow: 0px 0px 12px #33ccff;
+    }
+    /* Animate focus and hover style, and resizing. */
+    .my-page .ui-listview li,
+    .my-page .ui-listview .ui-button {
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        transition: all 500ms ease;
+    }
+}
+/* Second breakpoint is 63.75em (1020px). 4 column layout. Tiles will be 250x250 pixels incl. margin again at the breakpoint. */
+@media ( min-width: 63.75em ) {
+    .my-page .ui-content {
+        padding: .625em; /* 10px */
+    }
+    /* Set a max-width for the last breakpoint to prevent too much stretching on large screens.
+    By setting the max-width equal to the breakpoint width minus padding we keep square tiles. */
+    .my-page .ui-listview {
+        max-width: 62.5em; /* 1000px */
+        margin: 0 auto;
+    }
+    /* Because of the 1000px max-width the width will always be 230px (and margin left/right 10px),
+    but we stick to percentage values for demo purposes. */
+    .my-page .ui-listview li {
+        width: 23%;
+        height: 230px;
+        margin: .625em 1%;
+    }
+}
+/* For this demo we used images with a size of 310x310 pixels. Just before the second breakpoint the images reach their max width: 1019px - 2 x 9px padding = 1001px x 30.9333% = ~310px */
     </style>
 </head>
 
@@ -128,11 +292,11 @@
                 </div>
             </div>
         </div>
-    
+
         <div data-role="content">
             <p class="welcome">Bienvenido al Cine AmauriPolis. Explora nuestras opciones:</p>
-            
-    
+
+
             <div class="info-div" id="infoDiv1">
                 <h3>Promociones en Productos!!</h3>
                 <p>Por esta Semana tenemos una promocion en las Bebidas ICE mas un combo de palomitas</p>
@@ -160,85 +324,153 @@
                     <div class="spike"></div>
                 </div>
             </div>
-            
-            </div>
 
         </div>
-    
-        <script>
-            function openInfoDiv(divId) {
-                $("#" + divId).fadeIn();
-            }
-    
-            function closeInfoDiv(divId) {
-                $("#" + divId).fadeOut();
-            }
-        </script>
-    </div>
-    
 
-<!-- -----------------------------Pagina Boletos----------------------- -->
-<div data-role="page" id="page2">
-    <div data-role="header">
-        <div class="title">
+    </div>
+
+    <script>
+        function openInfoDiv(divId) {
+            $("#" + divId).fadeIn();
+        }
+
+        function closeInfoDiv(divId) {
+            $("#" + divId).fadeOut();
+        }
+    </script>
+    </div>
+
+
+    <!-- -----------------------------Pagina Boletos----------------------- -->
+    <div data-role="page" id="page2">
+        <div data-role="header">
+            <div class="title">
                 <h1>Cine AmauriPolis</h1>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1" data-icon="home">Inicio</a></li>
+                        <li><a href="#page2" data-icon="tag" class="ui-btn-active">Boletos</a></li>
+                        <li><a href="#page3" data-icon="eye">Peliculas</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div data-role="footer">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#page1" data-icon="home">Inicio</a></li>
-                    <li><a href="#page2" data-icon="tag" class="ui-btn-active">Boletos</a></li>
-                    <li><a href="#page3" data-icon="eye">Peliculas</a></li>
-                </ul>
+        <div data-role="content">
+            <form action="/" method="POST">
+                <input type="text" name="barcode" id="txt_barcode" placeholder="Codigo de Barras">
+
+                <input type="text" name="name_movie" id="txt_name_movie" placeholder="Nombre de la Pelicula">
+
+                <label for="">Fecha de la Funcion</label>
+                <input type="date" data-role="date" data-inline="true">
+
+                <input type="text" name="price" id="txt_price" placeholder="Precio del Boleto">
+
+                <input type="text" name="seat" id="txt_seat" placeholder="Asiento">
+
+                <label for="flip-6">Activo</label>
+                <select name="status" id="flip-6" data-role="slider" data-mini="true">
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
+                </select>
+
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
+            </form>
+            <form>
+                <input data-type="search" id="searchForCollapsibleSetChildren">
+            </form>
+            <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true"
+                id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+                <% tickets.forEach((ticket)=> { %>
+                    <div data-role="collapsible" data-filtertext="<%= ticket.name_movie %>">
+                        <h3>
+                            <%= ticket.name_movie %>
+                        </h3>
+                        <ul data-role="listview" data-inset="false">
+                            <li data-filtertext="Cine Movies">Codigo de barras: <%= ticket.barcode %>
+                            </li>
+                            <li data-filtertext="Cine Movies">Nombre de la Pelicula: <%= ticket.name_movie %>
+                            </li>
+                            <li data-filtertext="Cine Movies">Precio de compra: <%= ticket.price %>
+                            </li>
+                            <li>Fecha de la Funcion: <%= ticket.date %>
+                            </li>
+                            <li>Status: <%= ticket.status %>
+                            </li>
+                            <li><a href="/<%= ticket.barcode %>" class="ui-btn">Editar</a></li>
+                            <li><a href="/delete/<%= ticket.barcode %>" class="ui-btn">Eliminar</a></li>
+                        </ul>
+                    </div>
+                    <% }) %>
+            </div>
+            <div data-role="footer">
+                <h5>Developend by Alex Amauri Márquez Canales</h5>
             </div>
         </div>
     </div>
-    <div data-role="content">
-        <form action="/" method="POST">
-            <input type="text" name="barcode" id="txt_barcode" placeholder="Codigo de Barras">
 
-            <input type="text" name="name_movie" id="txt_name_movie" placeholder="Nombre de la Pelicula">
+    <!--  ----------------------- Pagina Peliculas ------------ -->
 
-            <label for="">Fecha de la Funcion</label>
-            <input type="date" data-role="date" data-inline="true">
+    <div data-role="page" id="page3" data-theme="b"  class="my-page" data-url="demo-page">
 
-            <input type="text" name="price" id="txt_price" placeholder="Precio del Boleto">
-
-            <input type="text" name="seat" id="txt_seat" placeholder="Asiento">
-            
-            <label for="flip-6">Activo</label>
-            <select name="status" id="flip-6" data-role="slider" data-mini="true">
-                <option value="0">No</option>
-                <option value="1">Si</option>
-            </select>
-
-            <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
-        </form>
-        <form>
-            <input data-type="search" id="searchForCollapsibleSetChildren">
-                </form>
-                <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
-                    <% tickets.forEach((ticket) => { %>
-                        <div data-role="collapsible" data-filtertext="<%= ticket.name_movie %>">
-                            <h3><%= ticket.name_movie %></h3>
-                            <ul data-role="listview" data-inset="false">
-                                <li data-filtertext="Cine Movies">Codigo de barras: <%= ticket.barcode %></li>
-                                <li data-filtertext="Cine Movies">Nombre de la Pelicula: <%= ticket.name_movie %></li>
-                                <li data-filtertext="Cine Movies">Precio de compra: <%= ticket.price %></li>
-                                <li>Fecha de la Funcion: <%= ticket.date %></li>
-                                <li>Status: <%= ticket.status %></li>
-                                <li><a href="/<%= ticket.barcode %>" class="ui-btn">Editar</a></li>
-                                <li><a href="/delete/<%= ticket.barcode %>" class="ui-btn">Eliminar</a></li>
-                            </ul>
-                        </div>
-                    <% }) %>
-                    </div>
-        <div data-role="footer">
-            <h5>Developend by Alex Amauri Márquez Canales</h5>
+        <div data-role="header">
+            <div class="title">
+                <h1>Cine AmauriPolis</h1>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1" data-icon="home">Inicio</a></li>
+                        <li><a href="#page2" data-icon="tag">Boletos</a></li>
+                        <li><a href="#page3" data-icon="eye" class="ui-btn-active">Peliculas</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-</div>
-</div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">
+                    <img src="https://fmrockandpop.com/media/k2/items/cache/6fdf5b887d2ed23305204899e58b5634_L.webp?t=20230420_175801" class="ui-listview-item-thumbnail">
+                    <h2>Godzilla</h2>
+                    <p>El Rey de los Mounstros</p>
+                    <p class="ui-listview-item-aside">2x1</p>
+                </a></li>
+                <li><a href="#">
+                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F26FCF07DA33D4AE6E035EC8F9DF6A86898B41FB0544A387550E49BBF43EDA6A/scale?width=1200&amp;aspectRatio=1.78&amp;format=webp" class="ui-listview-item-thumbnail">
+                    <h2>Deadpool II</h2>
+                    <p>El mercenarios mas querido vuelve</p>
+                    <p class="ui-listview-item-aside">3X2</p>
+                </a></li>
+                <li><a href="#">
+                    <img src="https://thediscoverer.columbus.edu.co/wp-content/uploads/2023/02/gggg-900x506.jpg" class="ui-listview-item-thumbnail">
+                    <h2>Interstellar</h2>
+                    <p>La mejor pelicula de la historia</p>
+                    <p class="ui-listview-item-aside">Gratis</p>    
+                </a></li>
+                <li><a href="#">
+                    <img src="https://www.egames.news/__export/1678916802946/sites/debate/img/2023/03/15/un_jefe_en_paxales_los_sims_4.jpg_1902800913.jpg" class="ui-listview-item-thumbnail">
+                    <h2>Un Jefe en pañales</h2>
+                    <p>Un bebe irrumpe en la vida de un niño normal</p>
+                    <p class="ui-listview-item-aside">Gratis</p>
+                </a></li>
+                <li><a href="#">
+                    <img src="https://acnews.blob.core.windows.net/imgnews/large/NAZ_5dccc27ff4c64672b4f157feb7da2947.jpg" class="ui-listview-item-thumbnail">
+                    <h2>Rapidos y Furiosos 7</h2>
+                    <p>Los corredores se embarcan en una aventura muy de accion</p>
+                    <p class="ui-listview-item-aside">Android</p>
+                </a></li>
+                <li><a href="#">
+                    <img src="https://www.mexicoescultura.com/galerias/actividades/principal/spuder.jpg" class="ui-listview-item-thumbnail">
+                    <h2>Spiderman Into-the-Spideverse</h2>
+                    <p>Miles Morales se confronta con el lider y sus compañeros del equipo de spidermans del mundo</p>
+                    <p class="ui-listview-item-aside">Firefox</p>
+                </a></li>
+            </ul>
+        </div><!-- /content -->
 
+    </div>
 
 
 </body>

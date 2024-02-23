@@ -10,7 +10,7 @@ const app = express();
 
 //Settings------
 app.set('view engine','ejs');
-
+app.use(express.static('public'));
 
 //Middlewares---------
 app.use(express.json());//leer json
