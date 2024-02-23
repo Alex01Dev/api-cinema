@@ -271,6 +271,8 @@
     }
 }
 /* For this demo we used images with a size of 310x310 pixels. Just before the second breakpoint the images reach their max width: 1019px - 2 x 9px padding = 1001px x 30.9333% = ~310px */
+    
+    
     </style>
 </head>
 
@@ -296,6 +298,32 @@
         <div data-role="content">
             <p class="welcome">Bienvenido al Cine AmauriPolis. Explora nuestras opciones:</p>
 
+            <form>
+                <input data-type="search" id="searchForCollapsibleSetChildren">
+            </form>
+            <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true"
+                id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+                <% tickets.forEach((ticket)=> { %>
+                    <div data-role="collapsible" data-filtertext="<%= ticket.name_movie %>">
+                        <h3>
+                            <%= ticket.name_movie %>
+                        </h3>
+                        <ul data-role="listview" data-inset="false">
+                            <li data-filtertext="Cine Movies">Codigo de barras: <%= ticket.barcode %>
+                            </li>
+                            <li data-filtertext="Cine Movies">Nombre de la Pelicula: <%= ticket.name_movie %>
+                            </li>
+                            <li data-filtertext="Cine Movies">Precio de compra: <%= ticket.price %>
+                            </li>
+                            <li>Fecha de la Funcion: <%= ticket.date %>
+                            </li>
+                            <li>Status: <%= ticket.status %>
+                            </li>
+                            <li><a href="/<%= ticket.barcode %>" class="ui-btn">Editar</a></li>
+                            <li><a href="/delete/<%= ticket.barcode %>" class="ui-btn">Eliminar</a></li>
+                        </ul>
+                    </div>
+                    <% }) %>
 
             <div class="info-div" id="infoDiv1">
                 <h3>Promociones en Productos!!</h3>
@@ -378,32 +406,7 @@
 
                 <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
             </form>
-            <form>
-                <input data-type="search" id="searchForCollapsibleSetChildren">
-            </form>
-            <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true"
-                id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
-                <% tickets.forEach((ticket)=> { %>
-                    <div data-role="collapsible" data-filtertext="<%= ticket.name_movie %>">
-                        <h3>
-                            <%= ticket.name_movie %>
-                        </h3>
-                        <ul data-role="listview" data-inset="false">
-                            <li data-filtertext="Cine Movies">Codigo de barras: <%= ticket.barcode %>
-                            </li>
-                            <li data-filtertext="Cine Movies">Nombre de la Pelicula: <%= ticket.name_movie %>
-                            </li>
-                            <li data-filtertext="Cine Movies">Precio de compra: <%= ticket.price %>
-                            </li>
-                            <li>Fecha de la Funcion: <%= ticket.date %>
-                            </li>
-                            <li>Status: <%= ticket.status %>
-                            </li>
-                            <li><a href="/<%= ticket.barcode %>" class="ui-btn">Editar</a></li>
-                            <li><a href="/delete/<%= ticket.barcode %>" class="ui-btn">Eliminar</a></li>
-                        </ul>
-                    </div>
-                    <% }) %>
+            
             </div>
             <div data-role="footer">
                 <h5>Developend by Alex Amauri Márquez Canales</h5>
@@ -429,7 +432,7 @@
                 </div>
             </div>
         </div>
-        <div role="main" class="ui-content">
+        <di v role="main" class="ui-content">
             <ul data-role="listview" data-inset="true">
                 <li><a href="#">
                     <img src="https://fmrockandpop.com/media/k2/items/cache/6fdf5b887d2ed23305204899e58b5634_L.webp?t=20230420_175801" class="ui-listview-item-thumbnail">
@@ -459,13 +462,13 @@
                     <img src="https://acnews.blob.core.windows.net/imgnews/large/NAZ_5dccc27ff4c64672b4f157feb7da2947.jpg" class="ui-listview-item-thumbnail">
                     <h2>Rapidos y Furiosos 7</h2>
                     <p>Los corredores se embarcan en una aventura muy de accion</p>
-                    <p class="ui-listview-item-aside">Android</p>
+                    <p class="ui-listview-item-aside">3x2</p>
                 </a></li>
                 <li><a href="#">
                     <img src="https://www.mexicoescultura.com/galerias/actividades/principal/spuder.jpg" class="ui-listview-item-thumbnail">
                     <h2>Spiderman Into-the-Spideverse</h2>
                     <p>Miles Morales se confronta con el lider y sus compañeros del equipo de spidermans del mundo</p>
-                    <p class="ui-listview-item-aside">Firefox</p>
+                    <p class="ui-listview-item-aside">Gratis</p>
                 </a></li>
             </ul>
         </div><!-- /content -->
